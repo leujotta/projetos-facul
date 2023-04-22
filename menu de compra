@@ -1,0 +1,134 @@
+Login
+
+from getpass import getpass
+
+qtde_user = int(input('quantos usuarios?'))
+user = []
+senha = []
+
+for i in range(qtde_user):
+  user.append(input('\ndigite o login de usuario:'))
+  senha.append(getpass('digite a senha do usuario:'))
+  
+  with open('usersenha.txt' , 'w') as arquivo:
+ for indice , users in enumerate(user):
+  arquivo.write(users + ';' + senha[indice])
+  arquivo.write('\n')
+  
+  login = input('digite seu usuario:')
+senha = str(input('digite sua senha:'))
+arquivo = open('usersenha.txt' , 'r')
+
+for i in arquivo:
+ nova_senha = i.split(';')[1].replace('\n' , '')
+ if login != i.split(';')[0]:
+  print('usuario invalido!!')
+ elif senha != nova_senha:
+  print('senha invalida!!')
+ else:
+  print('bem vindo')
+  login = True
+  
+  Produtos
+  
+  qtde_prod = int(input('quantos produtos?'))
+prod = []
+preço = []
+
+for i in range(qtde_prod):
+  prod.append(input('\ndigite o produto:'))
+  preço.append(float(input('digite o preço:')))
+  
+  with open('prodepreço.txt' , 'w') as arquivo2:
+ for indice , prods in enumerate(prod):
+  arquivo2.write(prods + ';' + str(preço[indice]))
+  arquivo2.write('\n')
+  
+  Menu
+  
+  print('-' * 50)
+print('Bem-Vindo ao Magazine Cristina')
+print('-' * 50)
+
+print('Veja nosso catálogo:')
+print('\n')
+arquivo2 = open('prodepreço.txt' , 'r')
+
+for indice , a in enumerate(arquivo2):
+  produto = a.split(';')[0]
+  precin = a.split(';')[1]
+  print(indice , produto , 'R$' , precin)
+print('-' * 50)
+escolha = int(input('Escolha seu produto:'))
+print(prod[escolha] , 'R$' , preço[escolha])
+
+if login == True:
+  print('-' * 50)
+  print('Bem-Vindo ao Magazine Cristina')
+  print('-' * 50)
+
+  print('Veja nosso catálogo:')
+  print('\n')
+  arquivo2 = open('prodepreço.txt' , 'r')
+
+  for indice , a in enumerate(arquivo2):
+    produto = a.split(';')[0]
+    precin = a.split(';')[1]
+    print(indice , produto , 'R$' , precin)
+  print('-' * 50)
+  escolha = int(input('Escolha seu produto:'))
+  print(prod[escolha] , 'R$' , preço[escolha])
+else:
+  print('usuario nao identificado')
+  
+  Teste final
+  
+  print('-' * 50)
+print('Bem-Vindo ao Magazine Cristina')
+print('-' * 50)
+print('Faça o Login:')
+print('\n')
+
+login = input('digite seu usuario:')
+senha = str(input('digite sua senha:'))
+arquivo = open('usersenha.txt' , 'r')
+
+for i in arquivo:
+ nova_senha = i.split(';')[1].replace('\n' , '')
+ if login != i.split(';')[0]:
+  print('usuario invalido!!')
+ elif senha != nova_senha:
+  print('senha invalida!!')
+ else:
+  acesso = True
+
+if acesso == True:
+  print('-' * 50)
+  print('Magazine Cristina')
+  print('Bem Vindo!' , login)
+  print('-' * 50)
+
+  print('Veja nosso catálogo:')
+  print('\n')
+  arquivo2 = open('prodepreço.txt' , 'r')
+
+  for indice , a in enumerate(arquivo2):
+    produto = a.split(';')[0]
+    precin = a.split(';')[1]
+    print(indice , produto , 'R$' , precin)
+  print('-' * 50)
+  escolha = int(input('Escolha seu produto:'))
+  print(prod[escolha] , 'R$' , preço[escolha])
+  
+  Carrinho (incompleto)
+  
+  prod_carrinho = []
+preço_carrinho = []
+
+while True:
+ escolhacarrinho = int(input('Deseja adicionar ao Carrinho? Não(0) Sim(1) '))
+ if escolhacarrinho == 1:
+  print('Adicionado com sucesso')
+  prod_carrinho.append(prod[escolha])
+  preço_carrinho.append(preço[escolha])
+  break
