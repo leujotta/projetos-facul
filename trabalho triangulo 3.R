@@ -1,3 +1,5 @@
+Trabalho feito em Funçao no R, identifica se é um triangulo, classifica em equilatero, isoceles ou escaleno e fala seu perimetro e área
+
 triangulo <- function(B, L1, L2){
   
   P <- B + L1 + L2
