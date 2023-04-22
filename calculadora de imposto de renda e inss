@@ -1,0 +1,28 @@
+hora = float(input('quantas horas por mes vc trabalha?'))
+valor_hora = float(input('quanto voce recebe por hora?'))
+salario = hora * valor_hora
+print('seu salario bruto é:' , salario)
+
+if salario <= 1903.98:
+  print('sem imposto de renda')
+  impostorenda = 0
+elif salario >= 1903.99 and salario <= 2826.65:
+  print('a porcentagem do ir é de 7,5%')
+  impostorenda = 0.075
+  valor_ir = 142.80
+elif salario >= 2826.66 and salario <= 3751.05:
+  print('a porcentagem do ir é de 15%')
+  impostorenda = 0.15
+  valor_ir = 354.80
+elif salario >= 3751.06 and salario <= 4664.68:
+   print('a porcentagem do ir é de 22.5%')
+   impostorenda = 0.225
+   valor_ir = 636,13
+else:
+    print('a porcentagem do ir é de 27.5%')
+    impostorenda = 0.275
+
+valor_ir = salario * impostorenda
+if valor_ir >= 869.36:
+  valor_ir = 869.36
+print('o valor do imposto de renda é:' , valor_ir)
