@@ -2,6 +2,8 @@
 classifique em equilátero, escaleno ou isósceles, e forneça o perímetro e sua área.
 Se não for triangulo, retornar alguma mensagem ao usuário.'''
 
+Trabalho feito em If no R, verifica se é triangulo ou não e classifica em equilatero, isoceles ou escaleno e fala seu perimetro e área
+
 #inserir os valores
 B <- as.numeric (readline ('digite o valor da base do triangulo:'))
 L1 <- as.numeric (readline ('digite o valor do lado do triangulo:'))
